@@ -1,6 +1,7 @@
 import { Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
@@ -14,8 +15,7 @@ export class UserService {
 
   // Fetch next id from backend
   addUser(user: Omit<User, 'id'>) {
-    //URL should be inside the settings and then the function getUrl or getAPIUrl
-    this.http.get<number>('https://localhost:7100/api/v1/user/next-id').subscribe({
+    this.http.get<number>(`${environment.apiBaseUrl}/user/next-id`).subscribe({
       next: (nextId) => {
         const newUser: User = {
           id: nextId,
