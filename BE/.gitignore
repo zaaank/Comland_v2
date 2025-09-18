@@ -1,42 +1,43 @@
-## Build results
+# Build output
 bin/
 obj/
 
-## User-specific files
+# Visual Studio working folder
+.vs/
+
+# User-specific files
 *.user
 *.suo
 *.userosscache
 *.sln.docstates
 
-## Logs
+# Logs
 *.log
 
-## OS junk
+# OS junk
 .DS_Store
 Thumbs.db
 
-## Rider / VSCode / VS
+# IDEs
 .vscode/
 .idea/
-*.vspscc
-*.vssscc
-*.ncb
-*.sdf
-*.cache
+
+# Database/cache/temp
 *.dbmdl
 *.bak
 
-## ASP.NET artifacts
-project.lock.json
-project.fragment.lock.json
-
-## Package manager
+# NuGet packages
+*.nupkg
 packages/
 .nuget/
 
-## Publish output
+# Publish output
 wwwroot/
+
+# App settings (environment-specific configs)
+appsettings.Development.json
+appsettings.Local.json
 appsettings.*.json
 
-## Environment
+# Environment files
 .env

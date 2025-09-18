@@ -1,31 +1,37 @@
 # Angular build artifacts
-/dist/
-/.angular/
-/out-tsc/
+dist/
+.angular/
+out-tsc/
 
 # Node modules
-/node_modules/
+node_modules/
 
 # Environment files
 .env
 .env.*.local
 
 # System / IDE files
-.DS_Store
-Thumbs.db
 .vscode/
 .idea/
+.DS_Store
+Thumbs.db
 
 # Logs and reports
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Compiled output
+# TypeScript build info
+*.tsbuildinfo
+
+# Compiled output (if accidentally generated inside src)
 *.js
 *.js.map
 
-# Testing
-/coverage/
+# Test coverage and configs
+coverage/
 karma.conf.js
 test.ts
+
+# Vite (Angular uses Vite internally for builds)
+vite/
