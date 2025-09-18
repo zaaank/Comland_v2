@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDEs / Editors
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Environment files
+.env
+*.env
+
+# Logs
+*.log
+
+# npm cache
+.npm
+
+# Optional: ignore system-wide node_modules or dist if mistakenly added here
+node_modules/
+dist/

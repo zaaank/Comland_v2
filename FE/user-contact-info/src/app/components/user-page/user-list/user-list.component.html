@@ -1,0 +1,23 @@
+<!-- User List Card Wrapper -->
+<div class="bg-white p-4 rounded shadow-sm border">
+
+  <!-- User List Loop -->
+  @for (user of users(); track user.id) {
+    <div
+      [ngStyle]="{
+        backgroundColor: user.gender === 'male' ? '#d1ecf1' : '#f8d7da',
+        color: user.gender === 'male' ? '#0c5460' : '#721c24'
+      }"
+      class="rounded p-2 d-flex justify-content-between align-items-center mb-4"
+    >
+      <div>
+        <strong>{{ user.name }}</strong><br />
+        {{ user.email || 'no contact information' }}
+        {{ user.telephone ? ' | ' + user.telephone : '' }}
+      </div>
+
+      <!-- Delete Button -->
+      <button class="btn btn-light btn-sm" (click)="deleteUser(user.id)">×</button>
+    </div>
+  }
+</div>

@@ -1,0 +1,58 @@
+<!-- Form Card Wrapper -->
+<div class="bg-white p-4 rounded shadow-sm border">
+
+  <!-- Reactive Form -->
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+    <!-- Name Input -->
+    <div class="mb-2">
+      <label>Name *</label>
+      <input class="form-control" formControlName="name" />
+      @if (name?.invalid && name?.touched) {
+        <div class="text-danger">Name is required.</div>
+      }
+    </div>
+
+    <!-- Gender Radios -->
+    <div class="mb-2">
+      <div><input type="radio" formControlName="gender" value="male" /> Male</div>
+      <div><input type="radio" formControlName="gender" value="female" /> Female</div>
+    </div>
+
+    <!-- Contact Information Header -->
+    <div style="border-bottom: 1px solid lightgray; margin-bottom: 1rem;">
+      <h6 class="mb-2 fw-bold">Contact information</h6>
+    </div>
+
+    <!-- Email + Telephone in Row -->
+    <div class="row mb-2">
+      <div class="col">
+        <label>Email</label>
+        <input class="form-control" formControlName="email" />
+        @if (email?.invalid && email?.touched) {
+          <div class="text-danger">Invalid email address.</div>
+        }
+
+        <!-- Disclaimer -->
+        <div class="form-text">
+          We'll never share your email with anyone else.
+        </div>
+      </div>
+
+      <div class="col">
+        <label>Telephone</label>
+        <input class="form-control" formControlName="telephone" />
+        @if (telephone?.invalid && telephone?.touched && telephone?.value) {
+          <div class="text-danger">Invalid telephone number format.</div>
+        }
+      </div>
+    </div>
+
+    <!-- Action Buttons (right-aligned) -->
+    <div class="d-flex justify-content-end mt-3">
+      <button type="button" class="btn btn-light me-2" (click)="resetForm()">Cancel</button>
+      <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Save</button>
+    </div>
+
+  </form>
+</div>
